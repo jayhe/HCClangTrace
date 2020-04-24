@@ -23,3 +23,5 @@ Other C Flags增加`-fsanitize-coverage=func,trace-pc-guard`
 
 ```
 会在app的沙盒的tmp目录下生成，trace.order的文件
+
+更多详情可查看[iOS App启动时间优化--Clang插桩获取启动调用的函数符号](https://www.jianshu.com/p/23c78fad7b10)

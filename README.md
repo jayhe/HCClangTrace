@@ -1,16 +1,5 @@
 # HCClangTrace
 
-[![CI Status](https://img.shields.io/travis/贺超/HCClangTrace.svg?style=flat)](https://travis-ci.org/贺超/HCClangTrace)
-[![Version](https://img.shields.io/cocoapods/v/HCClangTrace.svg?style=flat)](https://cocoapods.org/pods/HCClangTrace)
-[![License](https://img.shields.io/cocoapods/l/HCClangTrace.svg?style=flat)](https://cocoapods.org/pods/HCClangTrace)
-[![Platform](https://img.shields.io/cocoapods/p/HCClangTrace.svg?style=flat)](https://cocoapods.org/pods/HCClangTrace)
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
 ## Installation
 
 HCClangTrace is available through [CocoaPods](https://cocoapods.org). To install
@@ -20,9 +9,17 @@ it, simply add the following line to your Podfile:
 pod 'HCClangTrace'
 ```
 
-## License
-
-HCClangTrace is available under the MIT license. See the LICENSE file for more info.
-
 ## Usage
+### 1. 在Build Settings中添加编译选项
+Other C Flags增加`-fsanitize-coverage=func,trace-pc-guard`
+如果你是OC Swift混编，则在Other Swift Flags增加`-sanitize-coverage=func`,`-sanitize=undefined`
+### 2.统计程序启动的函数执行情况
+在你的首页的viewDidAppear函数中加上生成orderFile的函数，然后运行app
+```objc
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [HCClangTrace generateOrderFile];
+}
 
+```
+会在app的沙盒的tmp目录下生成，trace.order的文件

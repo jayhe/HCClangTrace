@@ -1,0 +1,16 @@
+PODS:
+  - HCClangTrace (1.0.0)
+
+DEPENDENCIES:
+  - HCClangTrace (from `../`)
+
+EXTERNAL SOURCES:
+  HCClangTrace:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HCClangTrace: 979d4577d6510fbba59c375160d793b95248fd83
+
+PODFILE CHECKSUM: dfafda3740aaa9b149fe033bed55681769548f70
+
+COCOAPODS: 1.8.4

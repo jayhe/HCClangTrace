@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HCClangTrace'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of HCClangTrace.'
+  s.version          = '1.0.0'
+  s.summary          = 'A tool to trace methods and generate orderFile.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,14 +18,15 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Use Clang Trace all method include c、oc、swift and block，you can use this tool to generate orderFile that gather
+almost all the method that your app called.
                        DESC
 
   s.homepage         = 'https://github.com/贺超/HCClangTrace'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '贺超' => 'chao.he@casstime.com' }
-  s.source           = { :git => 'https://github.com/贺超/HCClangTrace.git', :tag => s.version.to_s }
+  s.author           = { 'jay.he' => '1054134542@qq.com' }
+  s.source           = { :git => 'https://github.com/jayhe/HCClangTrace.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

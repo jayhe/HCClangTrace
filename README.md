@@ -20,10 +20,9 @@ it, simply add the following line to your Podfile:
 pod 'HCClangTrace'
 ```
 
-## Author
-
-贺超, chao.he@casstime.com
-
 ## License
 
 HCClangTrace is available under the MIT license. See the LICENSE file for more info.
+
+## Usage
+

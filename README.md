@@ -6,7 +6,7 @@ HCClangTrace is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'HCClangTrace', :git => 'https://github.com/jayhe/HCClangTrace.git'
+pod 'HCClangTrace', '~> 1.0.0'
 ```
 
 ## Usage

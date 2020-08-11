@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10BD051024E29A2D0064AB90 /* TestCallSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BD050F24E29A2D0064AB90 /* TestCallSwift.swift */; };
 		4489E62550F5AB4F3F1A4FF5 /* libPods-HCClangTrace_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF28CC738EEBE05356A76DBE /* libPods-HCClangTrace_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -36,8 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20B214B7076C2CA7C6FE9461 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		35FCA407F990A913A6ABCAAB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		10BD050E24E29A2D0064AB90 /* HCClangTrace_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HCClangTrace_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		10BD050F24E29A2D0064AB90 /* TestCallSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCallSwift.swift; sourceTree = "<group>"; };
+		20B214B7076C2CA7C6FE9461 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		35FCA407F990A913A6ABCAAB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HCClangTrace_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCClangTrace_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,7 +65,7 @@
 		896F7BE9209BC39087AB0587 /* Pods-HCClangTrace_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCClangTrace_Example.release.xcconfig"; path = "Target Support Files/Pods-HCClangTrace_Example/Pods-HCClangTrace_Example.release.xcconfig"; sourceTree = "<group>"; };
 		AF28CC738EEBE05356A76DBE /* libPods-HCClangTrace_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCClangTrace_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ACBBE4C5BAFEA97C51598E /* Pods-HCClangTrace_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCClangTrace_Example.debug.xcconfig"; path = "Target Support Files/Pods-HCClangTrace_Example/Pods-HCClangTrace_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DFD17B07779066E43A59EAB5 /* HCClangTrace.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HCClangTrace.podspec; path = ../HCClangTrace.podspec; sourceTree = "<group>"; };
+		DFD17B07779066E43A59EAB5 /* HCClangTrace.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HCClangTrace.podspec; path = ../HCClangTrace.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,9 +134,11 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* HCViewController.h */,
 				6003F5A6195388D20070C39A /* HCViewController.m */,
+				10BD050F24E29A2D0064AB90 /* TestCallSwift.swift */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				10BD050E24E29A2D0064AB90 /* HCClangTrace_Example-Bridging-Header.h */,
 			);
 			name = "Example for HCClangTrace";
 			path = HCClangTrace;
@@ -185,7 +190,6 @@
 				C8ACBBE4C5BAFEA97C51598E /* Pods-HCClangTrace_Example.debug.xcconfig */,
 				896F7BE9209BC39087AB0587 /* Pods-HCClangTrace_Example.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -238,6 +242,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "贺超";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						LastSwiftMigration = 1130;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -248,6 +255,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -317,6 +325,7 @@
 				6003F59E195388D20070C39A /* HCAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* HCViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				10BD051024E29A2D0064AB90 /* TestCallSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,12 +453,18 @@
 			baseConfigurationReference = C8ACBBE4C5BAFEA97C51598E /* Pods-HCClangTrace_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HCClangTrace/HCClangTrace-Prefix.pch";
 				INFOPLIST_FILE = "HCClangTrace/HCClangTrace-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard";
+				OTHER_SWIFT_FLAGS = "-sanitize-coverage=func -sanitize=undefined";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HCClangTrace/HCClangTrace_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -460,12 +475,17 @@
 			baseConfigurationReference = 896F7BE9209BC39087AB0587 /* Pods-HCClangTrace_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HCClangTrace/HCClangTrace-Prefix.pch";
 				INFOPLIST_FILE = "HCClangTrace/HCClangTrace-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard";
+				OTHER_SWIFT_FLAGS = "-sanitize-coverage=func -sanitize=undefined";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HCClangTrace/HCClangTrace_Example-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -474,6 +494,7 @@
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -498,6 +519,7 @@
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",

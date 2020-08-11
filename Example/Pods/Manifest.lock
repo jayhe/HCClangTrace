@@ -1,16 +1,37 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - HCClangTrace (1.0.0)
 
 DEPENDENCIES:
+  - AFNetworking
   - HCClangTrace (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
 
 EXTERNAL SOURCES:
   HCClangTrace:
     :path: "../"
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   HCClangTrace: 979d4577d6510fbba59c375160d793b95248fd83
 
-PODFILE CHECKSUM: dfafda3740aaa9b149fe033bed55681769548f70
+PODFILE CHECKSUM: dc34042635e332978f1fd9e20299fb00f139e125
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

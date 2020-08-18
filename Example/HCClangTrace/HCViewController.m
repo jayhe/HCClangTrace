@@ -27,7 +27,9 @@ void testCallCMethod(void);
     self.testCallBlock = ^(void){
         NSLog(@"testCallBlock");
     };
-    [self callSomeMethods];
+    for (NSInteger i = 0; i < 100; i++) {
+        [self callSomeMethods];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -70,14 +72,18 @@ void testCallCMethod(void);
 #pragma mark - Private Method
 
 - (void)callSomeMethods {
-    // call third lib method
-    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    // call block
-    self.testCallBlock();
-    // call swift method
-    [[TestCallSwift new] testCallSwiftMethod];
-    // call c method
-    testCallCMethod();
+    NSInteger i = 0;
+    while (i < 5) {
+        // call third lib method
+        [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+        // call block
+        self.testCallBlock();
+        // call swift method
+        [[TestCallSwift new] testCallSwiftMethod];
+        // call c method
+        testCallCMethod();
+        i++;
+    }
 }
 
 @end

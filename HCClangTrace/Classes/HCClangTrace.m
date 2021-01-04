@@ -57,6 +57,7 @@ void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
            info.dli_sname,
            info.dli_saddr);
      */
+    *guard = 0;
 }
 
 + (void)generateOrderFile {

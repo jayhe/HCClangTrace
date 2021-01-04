@@ -65,7 +65,7 @@
 		896F7BE9209BC39087AB0587 /* Pods-HCClangTrace_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCClangTrace_Example.release.xcconfig"; path = "Target Support Files/Pods-HCClangTrace_Example/Pods-HCClangTrace_Example.release.xcconfig"; sourceTree = "<group>"; };
 		AF28CC738EEBE05356A76DBE /* libPods-HCClangTrace_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCClangTrace_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8ACBBE4C5BAFEA97C51598E /* Pods-HCClangTrace_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCClangTrace_Example.debug.xcconfig"; path = "Target Support Files/Pods-HCClangTrace_Example/Pods-HCClangTrace_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DFD17B07779066E43A59EAB5 /* HCClangTrace.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HCClangTrace.podspec; path = ../HCClangTrace.podspec; sourceTree = "<group>"; };
+		DFD17B07779066E43A59EAB5 /* HCClangTrace.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HCClangTrace.podspec; path = ../HCClangTrace.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

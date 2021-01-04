@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HCClangTrace'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A tool to trace methods and generate orderFile.'
 
 # This description is used to generate tags and improve search results.
@@ -22,7 +22,7 @@ Use Clang Trace all method include c、oc、swift and block，you can use this t
 almost all the method that your app called.
                        DESC
 
-  s.homepage         = 'https://github.com/贺超/HCClangTrace'
+  s.homepage         = 'https://github.com/jayhe/HCClangTrace'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'jay.he' => '1054134542@qq.com' }

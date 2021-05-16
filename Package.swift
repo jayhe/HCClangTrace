@@ -23,7 +23,7 @@ let package = Package(
             dependencies: [], // 依赖
             path: "HCClangTrace", // 源代码路径
             sources: ["Classes"], // 具体的源代码资源，跟path组合就是"./HCClangTrace/Classes/"
-            publicHeadersPath: "./HCClangTrace/Classes",
+            //publicHeadersPath: "./HCClangTrace/Classes",
             cSettings: [
                 .headerSearchPath("Classes"),
             ]),

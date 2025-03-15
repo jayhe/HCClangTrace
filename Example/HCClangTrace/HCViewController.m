@@ -24,17 +24,19 @@ void testCallCMethod(void);
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.testCallBlock = ^(void){
-        NSLog(@"testCallBlock");
-    };
-    for (NSInteger i = 0; i < 100; i++) {
-        [self callSomeMethods];
-    }
+//    self.testCallBlock = ^(void){
+//        NSLog(@"testCallBlock");
+//    };
+//    for (NSInteger i = 0; i < 100; i++) {
+//        [self callSomeMethods];
+//    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
+    NSTimeInterval mainProcessStartTime = [HCClangTrace getProcessStartTime];
+    NSLog(@"APP进程创建的时间：%@\nAPP启动预估时间为：%.3f毫秒", [NSDate dateWithTimeIntervalSince1970:mainProcessStartTime / 1000].description, interval * 1000 - mainProcessStartTime);
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [HCClangTrace generateOrderFile];

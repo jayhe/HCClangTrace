@@ -6,7 +6,7 @@ HCClangTrace is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'HCClangTrace', '~> 1.0.0'
+pod 'HCClangTrace', '~> 1.1.0'
 ```
 
 ## Usage
@@ -88,7 +88,20 @@ post_install do |installer|
   end
 end
 ```
-
-### 4.其他
+### 4.如何统计线上APP的启动时间
+我们可以在Xcode中通过设置环境变量，来获取pre-main的时间，但是在线上则没法去这样操作，那么有没有办法可以去统计一下APP的启动时间了，可以通过获取APP主进程的创建时间到APP首屏渲染完成的时间差来获取整体的启动时间。
+直接调用小弟封装好的`getProcessStartTime`来获取，注意单位是毫秒，为了保留精度；具体的实现可以看代码注释。
+```objc
+int main(int argc, char * argv[])
+{
+    @autoreleasepool {
+        NSTimeInterval mainProcessStartTime = [HCClangTrace getProcessStartTime];
+        NSLog(@"APP进程创建的时间：%@", [NSDate dateWithTimeIntervalSince1970:mainProcessStartTime / 1000].description);
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([HCAppDelegate class]));
+    }
+}
+// APP进程创建的时间：2021-07-04 12:08:31 +0000
+```
+### 5.其他
 有问题欢迎提issue，一起沟通解决，学习进步；
 在使用之前可以先参照下我写的文档[iOS App启动时间优化--Clang插桩获取启动调用的函数符号](https://www.jianshu.com/p/23c78fad7b10)

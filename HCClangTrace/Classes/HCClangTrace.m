@@ -9,6 +9,9 @@
 #import "HCClangTrace.h"
 #import <dlfcn.h>
 #import <libkern/OSAtomic.h>
+#import <sys/sysctl.h>
+
+BOOL getProcessInfo(struct kinfo_proc *processInfo);
 
 @implementation HCClangTrace
 
@@ -101,6 +104,19 @@ void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
 #endif
 }
 
++ (NSTimeInterval)getProcessStartTime {
+    struct kinfo_proc kProcessInfo;
+    if (getProcessInfo(&kProcessInfo)) {
+        struct timeval timeInfo = kProcessInfo.kp_proc.p_un.__p_starttime;
+        return timeInfo.tv_sec * 1000 + timeInfo.tv_usec  / 1000.0;
+    } else {
+#if DEBUG
+        NSLog(@"获取进程的信息失败了");
+#endif
+        return 0;
+    }
+}
+
 #pragma mark - Util
 
 + (BOOL)isObjcMethodBySymbolName:(NSString *)symbolName {
@@ -110,6 +126,27 @@ void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
     BOOL isClassMethod = [symbolName hasPrefix:@"+["];
     
     return isInstanceMethod || isClassMethod;
+}
+/*
+ int sysctl(int *name, u_int namelen, void *oldp, size_t *oldlenp, void *newp, size_t newlen); // 返回：若成功为0，若出错-1
+ 1.name参数是指定名字的一个整数数组，namelen参数指定该数组中的元素数目。该数组中的第一个元素指定本请求定向到内核的哪个子系统，第二个及其后元素逐次系话指定该子系统的某个部分
+ 2.要取一个值，oldp需指向一个缓冲区，以让内核存放该值。oldlenp是一个值-结果参数：调用函数时oldlenp指向的值是缓冲区的大小，返回的值是内核在缓冲区中返回的数据量，如果缓冲区不够大，就返回ENOMEM错误。作为一个特例，oldp可以是一个空指针而oldlenp是一个非空指针，内核确定这个调用本应返回的数据量，并通过oldlenp返回这个值。
+ 3.要设置一个新值，newp需指向一个大小为newlen的缓冲区，如果没有指定新值，newp应为一个空指针，newlen应为0。
+ */
+BOOL getProcessInfo(struct kinfo_proc *processInfo) {
+    int name[4]; // 存放字节码，需要查询的信息
+    name[0] = CTL_KERN; // 内核查询
+    name[1] = KERN_PROC; // 查询进程
+    name[2] = KERN_PROC_PID; // 传入的是进程的PID
+    //name[3] = getpid(); // 获取当前进程的id
+    name[3] = [[NSProcessInfo processInfo] processIdentifier];
+    size_t size = sizeof(*processInfo);
+    int status = sysctl(name, sizeof(name) / sizeof(*name), processInfo, &size, NULL, 0);
+    if (status == 0) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end
